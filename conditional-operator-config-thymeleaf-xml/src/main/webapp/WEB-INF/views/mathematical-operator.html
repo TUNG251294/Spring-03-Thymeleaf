@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th = "http://www.thymeleaf.org">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+</head>
+<body>
+<a th:href="@{/operator/condition}">First operator</a>
+<h1>MATHEMATICAL OPERATOR</h1>
+<table border="1">
+  <tr>
+    <th>Comparator</th>
+    <th>Example</th>
+    <th>Result</th>
+  </tr>
+  <tr>
+    <td>+</td>
+    <td>3+2</td>
+    <td th:text="3+2"></td>
+  </tr>
+  <tr>
+    <td>-</td>
+    <td>4-1</td>
+    <td th:text="4-1"></td>
+  </tr>
+  <tr>
+    <td>*</td>
+    <td>2*3</td>
+    <td th:text="2*3"></td>
+  </tr>
+  <tr>
+    <td>/</td>
+    <td>10/4</td>
+    <td th:text="10/4"></td>
+  </tr>
+  <tr>
+    <td>%</td>
+    <td>10%7</td>
+    <td th:text="10%7"></td>
+  </tr>
+  <tr>
+    <td>()</td>
+    <td>-(3+4)</td>
+    <td th:text="-(3+4)"></td>
+  </tr>
+</table>
+</body>
+</html>

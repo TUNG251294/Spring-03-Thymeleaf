@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th = "http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<a th:href="@{/operator/condition}">Condition Operator</a>
+<h1>LOGICAL OPERATOR</h1>
+<table border="1">
+<tr>
+  <th>Operator</th>
+  <th>Example</th>
+  <th>Result</th>
+</tr>
+<tr>
+  <td>AND</td>
+  <td>true and false</td>
+  <td th:text="true and false"></td>
+</tr>
+<tr>
+  <td>OR</td>
+  <td>true or false</td>
+  <td th:text="true or false"></td>
+</tr>
+<tr>
+  <td>!</td>
+  <td>!false</td>
+  <td th:text="!false"></td>
+</tr>
+<tr>
+  <td>NOT</td>
+  <td>not false</td>
+  <td th:text="not false"></td>
+</tr>
+</table>
+</body>
+</html>

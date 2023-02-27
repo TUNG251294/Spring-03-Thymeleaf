@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th = "http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <!--    DANG CAU HINH CSS SAI-->
+    <link rel="stylesheet" type="text/css" th:href="@{webapp/WEB-INF/css/css.css}">
+</head>
+<body>
+<div th:insert="header::begin"></div>
+<!--iterStat chỉ là đếm thứ tự các đối tượng-->
+<h2>TEST FUNCTION SWITCH-CASE</h2>
+<table border="1">
+    <tr>
+        <th>ID</th>
+        <th>NAME</th>
+        <th>ROLE</th>
+    </tr>
+    <tr th:each="user, iterStat : ${users}">
+        <div th:if="${iterStat.odd}">
+            <td th:with="id = ${user.id}" th:text="${id}"></td>
+            <td th:with="name = 'CG'" th:text="${name}"></td>
+            <td th:switch="${user.role}">
+                <span th:case = 1>Admin</span>
+                <span th:case = 2>DBA</span>
+                <span th:case = 3>User</span>
+            </td>
+        </div>
+    </tr>
+</table>
+
+<!--su dung ca 1 template lam fragment-->
+<div th:insert="middle"></div>
+
+<h2>TEST FUNCTION IF-UNLESS</h2>
+<table border="1">
+    <tr>
+        <th>ID</th>
+        <th>NAME</th>
+        <th>ROLE</th>
+        <th>IS ADMIN</th>
+    </tr>
+    <tr th:each="user, iterStat : ${users}">
+            <td th:with="id = ${user.id}" th:text="${id}"></td>
+            <td th:with="name = 'CG'" th:text="${name}"></td>
+            <td th:switch="${user.role}">
+                <span th:case = 1>Admin</span>
+                <span th:case = 2>DBA</span>
+                <span th:case = 3>User</span>
+            </td>
+            <td th:if = "${user.id == 1}">Yes</td>
+            <td th:unless = "${user.id == 1}">No</td>
+
+    </tr>
+</table>
+<div th:insert="footer :: end"></div>
+<div th:insert="footer :: #end-text"></div>
+</body>
+</html>

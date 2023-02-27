@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<form th:action="@{/home/create}" th:object="${employee}"
+      method="POST" novalidate="novalidate">
+    <input type="text" th:field="*{id}"/>
+    <div>
+        <label>Name</label>
+        <input type="text" th:field="*{name}"/>
+    </div>
+    <div>
+        <label>contactNumber</label>
+        <input type="text" th:field="*{contactNumber}"/>
+    </div>
+    <input type="submit" value="Save"/>
+</form>
+</body>
+</html>
